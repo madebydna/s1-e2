@@ -1,3 +1,22 @@
+## Notes
+
+The unit tests will show how the system runs. Three badge types have been implemented and tested as examples of what 
+is possible for an achievement system:
+
+1. **A "cumulative finite" type.** 
+  - set number of these sorts of badges
+  - different levels (bronze, silver and gold) 
+  - higher levels represent higher achievement
+  - users past achievements are taken into consideration to determine the requirements for the next level badge
+  
+2. **A "cumulative infinite" type**
+  - user gets rewarded for every nth of a particular action
+  - user can accumulate an infinite number of badges of this type
+  
+3. **Dynamic Badges**
+  - user can lose this type of match as soon as her status changes (not in the top 10% of most watched list)
+
+
 -- RMU SESSION #1 | PROBLEM 2
 -- Submissions due 12:00 UTC 2010.09.15
 
