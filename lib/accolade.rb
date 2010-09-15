@@ -1,0 +1,5 @@
+require File.join(File.dirname(__FILE__), 'accolade', 'base')
+require File.join(File.dirname(__FILE__), 'accolade', 'awarder')
+require File.join(File.dirname(__FILE__), 'accolade', 'commit_badge')
+require File.join(File.dirname(__FILE__), 'accolade', 'fork_badge')
+require File.join(File.dirname(__FILE__), 'accolade', 'watcher_badge')

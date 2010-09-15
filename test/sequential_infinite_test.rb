@@ -1,8 +1,7 @@
 require File.expand_path(File.join(File.dirname(__FILE__), 'test_helper')) unless defined?(Accolade)
-require File.expand_path(File.join(File.dirname(__FILE__), '..', 'fork_badge'))
 
 
-class CumulativeIniniteTest < Test::Unit::TestCase 
+class SequentialIniniteTest < Test::Unit::TestCase 
   # Badge is being given for every 10th fork. A user can theoretically earn an infinite number of badges.
   
   setup do
@@ -22,6 +21,12 @@ class CumulativeIniniteTest < Test::Unit::TestCase
       @user = User.new(:forks_count => 9)
       @user.add_fork
       assert ForkBadge.number_of_badges(@user) == 1
+    end
+    
+    test "should get right number of badges based on stats if there is no info about previous badges" do
+      @user = User.new(:forks_count => 33)
+      @user.add_fork
+      assert ForkBadge.number_of_badges(@user) == 3
     end
     
   end

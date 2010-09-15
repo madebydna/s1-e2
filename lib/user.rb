@@ -11,7 +11,7 @@ class User
     end
     @badges = badges
     @actions = actions
-    @awarder = Awarder.new
+    @awarder = Accolade::Awarder.new
   end
   
   def commits_count
@@ -36,17 +36,17 @@ class User
     else
       @actions[:watcher_percentile] =  watcher_percentile + by
     end
-    Awarder.handle(self, :watcher)
+    @awarder.handle(self, :watcher)
   end
   
   def add_commit
     @actions[:commits_count] = commits_count + 1
-    Awarder.handle(self, :commit)
+    @awarder.handle(self, :commit)
   end
   
   def add_fork
     @actions[:forks_count] = forks_count + 1
-    Awarder.handle(self, :fork)
+    @awarder.handle(self, :fork)
   end
   
   # AWARD STUFF

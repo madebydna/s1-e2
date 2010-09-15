@@ -3,21 +3,28 @@
 The unit tests will show how the system runs. Three badge types have been implemented and tested as examples of what 
 is possible for an achievement system:
 
-**A "cumulative finite" type.** 
+**A "sequential finite" type.** 
 
-- set number of these sorts of badges
-- different levels (bronze, silver and gold) 
-- higher levels represent higher achievement
-- users past achievements are taken into consideration to determine the requirements for the next level badge
+- Set number of badges available
+- Different levels (bronze, silver and gold) can be earned in sequence
+- Higher levels represent higher achievement
+- Users past achievements are taken into consideration to determine the requirements for the next level badge
+- Problematic if user's past achievements are unknown. We have to avoid the user receiving the lowest badge,
+  because only the requirements for the lowest badge are checked for users w/out badges. 
+- Most awarding systems seem to follow this pattern and exceptions to the rule are hard to work in when the 
+  system has been mainly set up to accommodate this type of award.
   
-**A "cumulative infinite" type**
+The following two types of awards are two of many examples of possible exceptions, that seem to make 
+special-casing necessary.
+  
+**A "sequential infinite" type**
 
-- user gets rewarded for every nth of a particular action
-- user can accumulate an infinite number of badges of this type
+- User gets rewarded for every nth of a particular action
+- User can accumulate an infinite number of badges of this type
   
 **Dynamic Badges**
 
-- user can lose this type of match as soon as her status changes (not in the top 10% of most watched list)
+- User can lose this type of match as soon as her status changes (not in the top 10% of most watched list)
 
 
 

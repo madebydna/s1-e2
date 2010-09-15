@@ -1,4 +1,4 @@
-class WatcherBadge < Accolade
+class WatcherBadge < Accolade::Base
   
   def initialize(name)
     @name = name
